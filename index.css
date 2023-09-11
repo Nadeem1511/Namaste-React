@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px black;
+}
+.img{
+    width: 175px;
+}
+.nav-items > ul{
+    font-size: 18px;
+    display: flex;
+    list-style: none;
+    padding: 0px 20px; 
+}
+.nav-items > ul > li{
+    padding: 10px;
+    margin: 10px;
+}
+.nav-items{
+    display: flex;
+    align-items: center;
+}

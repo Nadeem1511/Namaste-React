@@ -1,26 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
- const Title = () => (
-    <div>
-        <h1>Hello, Nadeem all the best to complete Namaste-React</h1>
-    </div>
- );
 
- const HeadingComponent = () => (
-  <div> 
-     <Title />
-     <Title></Title>
-     {Title()}
-    <h1 id="head">Hello, Nadeem all the best to complete Namaste React🚀</h1>
-  </div>  
- );  
+const Header = () => {
+   return (
+      <div className="header">
+         <div className="logo-container">
+            <img className="img" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4_6i1zIkm4XFv1FZgO5jM8rlvxneEMyGg3w&usqp=CAU"/>
+         </div>
+         <div className="nav-items">
+            <ul>
+               <li>Home</li>
+               <li>About Us</li>
+               <li>Contact Us</li>
+               <li>Cart</li>
+            </ul>
+         </div>
+      </div>
+   );
+};
+
+ const AppLayout = () =>{
+   return <div className="app">
+      <Header/>
+   </div>
+ };
 
  const root = ReactDOM.createRoot(document.getElementById("root"));
- root.render(<HeadingComponent />);
+ root.render(<AppLayout/>);
 
- const root2 = ReactDOM.createRoot(document.getElementById("root2"));
- root2.render(<HeadingComponent />);
+
  
 
 
