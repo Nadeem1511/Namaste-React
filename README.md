@@ -1,8 +1,8 @@
-<!-- Excited To Learn React 🚀 -->
+#Excited To Learn React 🚀
 
 I'll be updating my knowledge acquired in theory here!!
 
-<!-- Episode - 1: -->
+#Episode - 1:
 
 1.What is Emmet?
 
@@ -44,7 +44,7 @@ I'll be updating my knowledge acquired in theory here!!
 - Async allows your script to run as soon as it's loaded, without blocking other elements on the page.
 - Defer means your script will only execute after the page has finished loading.
 
-<!-- Episode - 2: -->
+#Episode - 2:
 
 1. What is 'npm'?
 
@@ -86,7 +86,7 @@ I'll be updating my knowledge acquired in theory here!!
 - We can set 'browserlist' inside "package.jason".
 - Eg : "browserlist" : ["last 2 chrome versions", "last 2 firefox versions"].
 
-<!-- Episode - 3: -->
+#Episode - 3:
 
 1. JSX : JSX stands for JavaScript XML. JSX allows us to write HTML in React. JSX makes it easier to write and add HTML in React.
 
@@ -100,7 +100,7 @@ I'll be updating my knowledge acquired in theory here!!
 
 6. Functional Components : It is a normal function which returns a React Element. ( Eg : const Parent = () => <h1>I am your Parent</h1>)
 
-<!-- Episode - 4: -->
+#Episode - 4:
 
 1. Is JSX mandatory for React?
 
@@ -115,7 +115,7 @@ I'll be updating my knowledge acquired in theory here!!
 3. How can I write comments in JSX?
 
 - If you want to comment a single line then you can use Double Forward Slash(//) but it can only be used outside of the render block.
-- If you want to comment something in JSX you need to use JavaScript comments inside of Curly braces like {/_write your comment here_/}.
+- If you want to comment something in JSX you need to use JavaScript comments inside of Curly braces like {/_write your comments here _/}.
 
 4. What is Virtual DOM?
 
@@ -136,7 +136,7 @@ I'll be updating my knowledge acquired in theory here!!
 - Props are Properties, It is just like a argument in a function. We use it to pass attributes to a component.
 - When you want to dynamically pass the data to the component we pass in as a prop.
 
-<!-- Episode - 5: -->
+#Episode - 5:
 
 1. What is difference between "Named Export" , "Default Export" and " \* as Export"?
 
@@ -160,6 +160,6 @@ I'll be updating my knowledge acquired in theory here!!
 
 - The useState Hook in React is used to introduce and manage state in functional components.
 
-<!-- Extras:  -->
+#Extras:
 
 - Reconciliation Algorithm is also known as ReactFiber. - Hooks was introduced in React-16. - Diff-Algorith : It finds difference between two virtual DOM. - React is fast because it has virtual DOM, Virtual DOM uses Diff-Algorithm so that it can manupulate DOM very efficiently.
