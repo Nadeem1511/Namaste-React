@@ -83,3 +83,25 @@
 .shi-srch {
   margin: 5px;
 }
+
+/* Header-link */
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Restaurent-Card*/
+
+.menu-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* About Us */
+.user-card {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  width: 500px;
+}
