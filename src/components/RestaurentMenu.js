@@ -18,8 +18,8 @@ const RestaurentMenu = () => {
     );
   console.log(itemCategory);
 
-  const { name, areaName, cuisines, avgRating } =
-    resInfo?.cards[0]?.card?.card?.info;
+  // const { name, areaName, cuisines, avgRating } =
+  //   resInfo?.cards[0]?.card?.card?.info;
 
   // const { itemCards } =
   //   resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
@@ -27,11 +27,11 @@ const RestaurentMenu = () => {
 
   return (
     <div className="menu-container">
-      <h1>{name}</h1>
-      <p>{areaName}</p>
+      <h1>{resInfo?.cards[0]?.card?.card?.info?.name}</h1>
+      <p>{resInfo?.cards[0]?.card?.card?.info?.areaName}</p>
       <p>
-        {cuisines.join(", ")} - Ratings:
-        {avgRating}
+        {resInfo?.cards[0]?.card?.card?.info?.cuisines.join(", ")} - Ratings:
+        {resInfo?.cards[0]?.card?.card?.info?.avgRating}
       </p>
       <h2>Menu</h2>
       <ul>
