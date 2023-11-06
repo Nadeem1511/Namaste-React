@@ -1,5 +1,4 @@
 import React from "react";
-import { json } from "react-router-dom";
 
 class UserClass extends React.Component {
   constructor(props) {
@@ -12,7 +11,6 @@ class UserClass extends React.Component {
         avatar_url: "Dummy photo",
       },
     };
-    //console.log(this.props.name + "Child Constructor");
   }
 
   async componentDidMount() {
@@ -27,13 +25,12 @@ class UserClass extends React.Component {
   render() {
     const { name, avatar_url, location, bio } = this.state.userInfo;
 
-    //console.log(this.props.name + "Child Render");
     return (
-      <div className="user-card">
-        <img src={avatar_url} />
-        <h2>Name : {name}</h2>
-        <h3>Location : {location}</h3>
-        <h3>Decription : {bio}</h3>
+      <div className="flex flex-col items-center">
+        <img className="w-[300px] h-[300px]" src={avatar_url} />
+        <h2 className="text-3xl text-amber-700">{name}</h2>
+        <h3 className="text-2xl text-amber-700">{location}</h3>
+        <h3 className="text-xl text-amber-700">{bio}</h3>
       </div>
     );
   }

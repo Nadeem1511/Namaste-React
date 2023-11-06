@@ -1,9 +1,9 @@
 const Contact = () => {
   return (
-    <div>
-      <h1>This is my phone number: </h1>
-      <h2>9994070901</h2>
-      <h3>Do call if you come across any bugs.</h3>
+    <div className="flex flex-col mt-[200px] items-center justify-center ">
+      <h1 className="font-semibold text-lg text-amber-700">Contact Us On: </h1>
+      <h2>Phn no : 9994070901</h2>
+      <h3>Mail : mohamednadeem1511@gmail.com</h3>
     </div>
   );
 };

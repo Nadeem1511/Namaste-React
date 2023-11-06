@@ -1,5 +1,6 @@
 import { useState, useEffect } from "../../node_modules/react";
 import RestaurentCard from "./RestaurentCard";
+import { APP_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -17,9 +18,7 @@ const Body = () => {
   }, []);
 
   const fetchedData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.0826802&lng=80.2707184&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(APP_URL);
 
     const json = await data.json();
 
@@ -33,17 +32,21 @@ const Body = () => {
 
   const onlineStatus = useOnlineStatus();
   if (onlineStatus === false)
-    return <h1>Looks like you are offline!! Please check your internet.</h1>;
+    return (
+      <h1 className="text-center mt-[200px] text-amber-700 font-semibold">
+        Oops..looks like you are offline!! Please check your internet.
+      </h1>
+    );
 
   return listofRestaurents.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter-btn">
-        <div className="search">
+    <div>
+      <div className="flex items-center mt-3 mb-3 ml-3">
+        <div className="mr-10 ml-5">
           <input
             type="text"
-            className="srch-box"
+            className="m-1 p-1 border-amber-700"
             placeholder="Search Restaurents"
             value={searchData}
             onChange={(e) => {
@@ -51,7 +54,7 @@ const Body = () => {
             }}
           />
           <button
-            className="srch-btn"
+            className="p-2 m-2 cursor-pointer text-yellow-300 bg-amber-700 font-medium rounded-lg"
             onClick={() => {
               const filteredRestaurent = listofRestaurents.filter((res) =>
                 res.info.name.toLowerCase().includes(searchData.toLowerCase())
@@ -63,7 +66,7 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="top-res"
+          className="p-3 m-2 cursor-pointer bg-yellow-300 text-amber-700 font-medium rounded-lg"
           onClick={() => {
             const filteredList = listofRestaurents.filter(
               (res) => res.info.avgRating > 4.2
@@ -74,7 +77,7 @@ const Body = () => {
           Top Restaurent
         </button>
       </div>
-      <div className="restro-container">
+      <div className="flex flex-wrap">
         {filteredListOfRestaurents.map((restaurent) => (
           <Link
             className="menu-link"
