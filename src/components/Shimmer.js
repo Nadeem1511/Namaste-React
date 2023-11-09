@@ -1,23 +1,9 @@
 const Shimmer = () => {
   return (
-    <div className="shimmer">
-      <div className="shimmer-btn">
-        <input type="text" placeholder="Search Restaurents" />
-        <button className="shi-srch"></button>
-        <button className="shi-btn"></button>
-      </div>
-      <div className="shimmer-container">
-        <div className="shim-card"></div>
-        <div className="shim-card"></div>
-        <div className="shim-card"></div>
-        <div className="shim-card"></div>
-        <div className="shim-card"></div>
-        <div className="shim-card"></div>
-        <div className="shim-card"></div>
-        <div className="shim-card"></div>
-        <div className="shim-card"></div>
-        <div className="shim-card"></div>
-      </div>
+    <div className="">
+      <h1 className="font-bold text-amber-700 text-center text-xl mt-[200px]">
+        Loading...
+      </h1>
     </div>
   );
 };

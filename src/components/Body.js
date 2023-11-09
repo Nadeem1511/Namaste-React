@@ -1,5 +1,5 @@
 import { useState, useEffect } from "../../node_modules/react";
-import RestaurentCard from "./RestaurentCard";
+import RestaurentCard, { withVegLabel } from "./RestaurentCard";
 import { APP_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -10,8 +10,9 @@ const Body = () => {
   const [filteredListOfRestaurents, setFilteredListOfRestaurents] = useState(
     []
   );
-
   const [searchData, setSearchData] = useState("");
+
+  const RestaurentCardVeg = withVegLabel(RestaurentCard);
 
   useEffect(() => {
     fetchedData();
@@ -23,14 +24,15 @@ const Body = () => {
     const json = await data.json();
 
     setListOfRestaurents(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredListOfRestaurents(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
   const onlineStatus = useOnlineStatus();
+
   if (onlineStatus === false)
     return (
       <h1 className="text-center mt-[200px] text-amber-700 font-semibold">
@@ -46,7 +48,7 @@ const Body = () => {
         <div className="mr-10 ml-5">
           <input
             type="text"
-            className="m-1 p-1 border-amber-700"
+            className="m-1 p-1"
             placeholder="Search Restaurents"
             value={searchData}
             onChange={(e) => {
@@ -84,7 +86,11 @@ const Body = () => {
             key={restaurent.info.id}
             to={"/restaurent/" + restaurent.info.id}
           >
-            <RestaurentCard resData={restaurent} />
+            {restaurent.info.isOpen ? (
+              <RestaurentCardVeg resData={restaurent} />
+            ) : (
+              <RestaurentCard resData={restaurent} />
+            )}
           </Link>
         ))}
       </div>

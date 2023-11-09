@@ -4,11 +4,9 @@ const Error = () => {
   const err = useRouteError();
   return (
     <div>
-      <h1>Oops....</h1>
-      <h2>Something has went wrong.</h2>
-      <h3>
-        {err.status} : {err.statusText}
-      </h3>
+      <h1 className="h-[100vh] bg-yellow-300 text-xl font-semibold text-amber-700 text-center pt-[300px]  ">
+        Oops.. Something has went wrong.
+      </h1>
     </div>
   );
 };
